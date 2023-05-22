@@ -71,6 +71,27 @@ var eliminarcontacto = function(idaeliminar){
 //Prueba de eliminar contacto
 eliminarcontacto(2)
 
+//Esta funcion permite actualizar contactos
+var actualizarcontacto = function(idactualizar, nombre2, apellido2, telefono2, ciudad2, direccion2){
+    let indice = contactos.findIndex((contacto) => contacto.id==idactualizar);
+    if (indice != -1){
+        contactos[indice]={
+            id: contactos[indice].id,
+            nombres: nombre2, 
+            apellidos: apellido2,
+            telefono: telefono2,
+            ciudad: ciudad2,
+            direccion: direccion2
+        }
+    }
+    else{
+        console.log("Error al actualizar contacto, este contacto no existe en la lista.")
+    }
+}
+
+//Prueba actualizar contacto
+actualizarcontacto(1,"Jesus","Wayne",6666666666,"Gotica","Direccion 6")
+
 //Esta funcion imprime en consola los contactos de la lista
 var mostrarlista = function(){
     console.log("Esta es su lista de contactos:");
