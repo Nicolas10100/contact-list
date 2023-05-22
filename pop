@@ -1,0 +1,57 @@
+//Creo la lista de contactos
+const contactos = [
+    {
+        nombre: "Nicolas Trujillo",
+        edad: 23,
+        telefono: 1111111111,
+        empresa: "Conconcreto",
+    },
+    {
+        nombre: "Lucas Restrepo",
+        edad: 23,
+        telefono: 2222222222,
+        empresa: "Grupo Exito",
+    },
+    {
+        nombre: "Martha Hernandez",
+        edad: 57,
+        telefono: 3333333333,
+        empresa: "Proteccion",
+    },
+    {
+        nombre: "Rocio Trujillo",
+        edad: 54,
+        telefono: 4444444444,
+        empresa: "DIAN",
+    }
+]
+
+//Esta funcion agrega contactos a la lista de contactos por el metodo push
+var agregarcontacto = function(nombre1, edad1, telefono1, empresa1){
+    let ingreso={        
+        nombre: nombre1,
+        edad: edad1,
+        telefono: telefono1,
+        empresa: empresa1,
+    }
+    contactos.push(ingreso)
+    console.log("Contacto " + nombre1 + " añadido exitosamente.")
+}
+
+//Esta funcion elimina contactos de la lista por su nombre
+var eliminarcontacto = function(nombreaeliminar){
+    let indice = contactos.findIndex((contacto) => contacto.nombre==nombreaeliminar);
+    if (indice != -1){
+        contactos.splice(indice,1);
+        console.log("Contacto " + nombreaeliminar + " eliminado exitosamente.")
+    }
+    else{
+        console.log("Error al eliminar contacto, este contacto no existe en la lista.")
+    }
+}
+
+//Esta funcion imprime en consola los contactos de la lista
+var mostrarlista = function(){
+    console.log("Esta es su lista de contactos:");
+    console.log(contactos)
+}
